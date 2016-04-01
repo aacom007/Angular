@@ -1,0 +1,69 @@
+﻿.ux-menu-area {
+    position:           relative;
+    background-color:   black;
+    color:              #808080;
+    padding-left:       0px;
+    width:              200px;
+    min-height:         200vh;
+    padding-top:        40px;
+    font-size:          medium;
+    
+}
+
+.ux-menu-area .btn:hover {
+    color:              #808080;
+}
+
+.ux-menu {
+    height:             22px;
+    list-style-type:    none;
+    padding-left:       0px;
+    vertical-align:     top;
+}
+
+.ux-menu ul {
+    display:            inline;
+    list-style-type:    none;
+    vertical-align:     top;
+    padding-left:       0px;
+}
+
+.ux-menu li {
+    line-height:        3em;
+    cursor:             pointer;
+}
+
+.ux-menu li div{
+    line-height:        3em;
+    cursor:             pointer;
+    width:              90%;
+    padding-left:       16px; 
+}
+
+.ux-noselect {
+    -webkit-touch-callout: none;
+    user-select:        none;
+}
+
+.ux-selectable-item:hover {
+   background-color:   #fff;
+}
+
+.ux-menu-icon {
+    margin-right:      5px;
+    margin-left:       10px;
+}
+
+.ux-menu-active-indicator {
+    float:            right;
+    color:            #00ff21;
+    margin-right:     0;
+    margin-top:       8px;
+}
+
+@media screen and (max-width:400px) {
+    .ux-menu-area {
+        visibility:     hidden;
+    }
+    
+}

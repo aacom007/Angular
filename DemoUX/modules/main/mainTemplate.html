@@ -1,0 +1,1006 @@
+﻿<div class="main-title-bar">
+
+	<div class="row">
+
+		<div class="col-sm-8">
+			<div class="main-title-area">
+				<img class="main-icon" ng-src="{{image}}" />
+				<div class="main-title-area">
+					<p class="main-logo-title">{{title}}</p>
+					<p class="main-logo-subtitle">{{subtitle}}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="main-right-control">
+				<button class="btn btn-primary">Home</button>
+				<button class="btn btn-primary">Menu</button>
+				<button class="btn btn-default">Log Out</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid ngview">
+
+	<!--Need to put this into a directive. require more time. Have to pass all values and then rewire.-->
+	<div class="row nextButton">
+		<div class="btn-group btn-group-md col-sm-12" role="group">
+			<button class="btn btn-primary" ng-if="step.count > 1 && step.count < 9" id="Button5" ng-click="back()">< Back</button>
+			<button class="btn btn-primary" ng-if="step.count < 8 && step.count < 9" id="Button6" ng-click="next()">Next</button>
+			<button class="btn btn-primary" ng-if="step.count === 8 && step.count < 9" id="Button7" ng-click="submitForm()">Submit Form</button>
+			<button class="btn btn-default" ng-if="step.count < 9" id="Button8" ng-click="cancel()">Cancel</button>
+			<button class="btn btn-default" ng-if="step.count === 9" id="Button11" ng-click="startNew()">Start New Application</button>
+		</div>
+	</div>
+	<br/><br/>
+	<div class="row>">
+		<strong>{{step.message}}</strong>
+	</div>
+	<br/>
+
+	<!-- Step 1 -->
+	<form class="formText removeMargin" ng-if="step.count === 1" onsubmit="validate()">
+		
+		<!-- First Name -->
+		<div class="clearfix">
+			<div class="row">
+				<label>First Name:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="FirstName"
+					required
+					aria-required="true"
+					ng-model="contact.FirstName">
+			</div>
+
+		</div>
+		<br />
+		<!-- Last Name -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Last Name:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="LastName"
+					ng-model="contact.LastName">
+			</div>
+
+		</div>
+		<br />
+		<!-- Department -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Department:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="Department"
+					ng-model="contact.Department">
+			</div>
+
+		</div>
+		<br />
+		<!-- Address 1 -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Address Line 1:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="Address1"
+					ng-model="contact.Address1">
+			</div>
+
+		</div>
+		<br />
+		<!-- Address 2 -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Address Line 2:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="Address2"
+					ng-model="contact.Address2">
+			</div>
+
+		</div>
+		<br />
+		<!-- City -->
+		<div class="clearfix">
+			<div class="row">
+				<label>City:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="City"
+					ng-model="contact.City">
+			</div>
+
+		</div>
+		<br />
+		<!-- State -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>State:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.State">
+			</div>
+
+		</div>
+		<br />
+		<!-- Country -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Country:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.Country">
+			</div>
+
+		</div>
+		<br />
+		<!-- ZipCode -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Zip Code:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.zipCode">
+			</div>
+
+		</div>
+		<br />
+
+	</form>
+
+	<!--Step 2 B. TRANSFEROR(S)/SELLER(S) (additional transferors please complete “B” on the reverse)-->
+
+	<form class="formText removeMargin" ng-if="step.count === 2" onsubmit="validate()">
+
+		<!-- Parcel Number -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Assessor's Parcel Number</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="FirstName"
+					ng-model="forms.form1.parcelNumber">
+			</div>
+		</div>
+		<br />
+
+		<!-- City -->
+		<div class="clearfix">
+			<div class="row">
+
+				<label>City</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="City"
+					ng-model="contact.City">
+			</div>
+
+		</div>
+		<br />
+
+		<!-- RECORDER’S DOCUMENT NUMBER -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Recorder's Document Number</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="FirstName"
+					ng-model="forms.form1.parcelNumber">
+			</div>
+		</div>
+		<br />
+
+		<!-- 	PROBATE NUMBER (if applicable) -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Probate Number (if applicable) </label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="FirstName"
+					ng-model="forms.form1.probateNumber">
+			</div>
+		</div>
+		<br />
+
+		<!--DOD-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date of Death </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="FromDate"
+					name="FromDate"
+					ng-model="Date.date3">
+			</div>
+		</div>
+		<br />
+
+		<!--DATE OF PURCHASE OR TRANSFER-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date Of Purchase Or Transfer </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date1"
+					name="FromDate"
+					ng-model="Date.date2">
+			</div>
+		</div>
+		<br />
+
+		<!--DATE OF DECREE OF DISTRIBUTION (if applicable)-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date Of Decree Distribution</label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date2"
+					name="FromDate"
+					ng-model="Date.date1">
+			</div>
+		</div>
+
+	</form>
+
+	<!-- Step 3 certificateMsg-->
+	<form class="formText removeMargin" ng-if="step.count === 3">
+
+		<div class="clearfix">
+			<div class="row">
+				<div class="question">
+					<strong>
+						<h6>{{forms.certificateMsg}}</h6>
+					</strong>
+				</div>
+							
+				<br />
+				<div class="switch">
+					<input id="Checkbox10" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" ng-model="forms.form2.residence1">
+					<label for="Checkbox10" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+			<br/>
+
+		</div>
+		<!-- Full Name -->
+		<div class="clearfix">
+			<div class="row">
+				<label>{{forms.form3.sign}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true"
+					ng-model="contact.sign">
+			</div>
+
+		</div>
+		<br />
+		<!--DATE 1-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date5"
+					name="signDate">
+			</div>
+		</div>
+		<br />
+		<!-- Full Name -->
+		<div class="clearfix">
+			<div class="row">
+				<label>{{forms.form3.sign}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true"
+					ng-model="contact.sign">
+			</div>
+
+		</div>
+		<br />
+		<!--DATE 2-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date6"
+					name="signDate2">
+			</div>
+		</div>
+		<br />
+		<!-- Address  -->
+		<div class="clearfix">
+			<div class="row">
+				<label>Address Line 2:</label>
+			</div>
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="Address2">
+			</div>
+		</div>
+		<br />
+		<!--phone-->
+		<div class="clearfix">
+			<div class="row">
+				<label>Phone</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="phone">
+			</div>
+
+		</div>
+		<br />
+		<!-- City -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>City:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="City"
+					ng-model="contact.City">
+			</div>
+
+		</div>
+		<br />
+		<!-- State -->
+		<div class="clearfix">
+			<div class="row">
+				<label>State:</label>
+			</div>
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.State">
+			</div>
+		</div>
+		<br />
+		<!-- Country -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Country:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.Country">
+			</div>
+
+		</div>
+		<br />
+		<!-- ZipCode -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Zip Code:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.zipCode">
+			</div>
+
+		</div>
+		<br />
+	</form>
+
+	<!--Step 4 TRANSFEREE(S)/BUYER(S) (additional transferees please complete “C” below)-->
+	<form class="formText removeMargin" ng-if="step.count === 4">
+		<!-- Full Name -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>{{forms.form2.fullname}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true"
+					ng-model="contact.fullName">
+			</div>
+
+		</div>
+		<br />
+
+		<!-- ssn -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>{{forms.form2.ssn}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true">
+				<!--not filled as we are not posting at this moment-->
+			</div>
+
+		</div>
+		<br />
+
+		<!-- transferee -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>{{forms.form2.transferee}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true">
+				<!--not filled as we are not posting at this moment-->
+			</div>
+
+		</div>
+		<br />
+
+		<!-- adoption -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>{{forms.form2.adoption}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true">
+				<!--not filled as we are not posting at this moment-->
+			</div>
+		</div>
+		<br />
+
+		<!-- residence -->
+		<div class="clearfix">
+			<div class="row">
+				<div class="question">
+					<div class="row">
+						<label>{{forms.form2.residence}}</label>
+					</div>
+				</div>
+				<div class="switch">
+					<input id="Checkbox5" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" ng-model="forms.form2.residence1">
+					<label for="Checkbox5" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+		</div>
+		<br />
+
+		<!-- check -->
+		<div class="clearfix" ng-if="forms.form2.residence1">
+			<div class="row">
+				<div class="question">
+					<div class="row">
+						<label>{{forms.form2.check}}</label>
+					</div>
+				</div>
+				<div class="switch">
+					<input id="Checkbox3" class="cmn-toggle cmn-toggle-yes-no" type="checkbox">
+					<label for="Checkbox3" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+
+		<br />
+		<!-- exclusion -->
+		<div class="clearfix">
+			<div class="row">
+				<div class="question">
+					<div class="row">
+						<label>{{forms.form2.exclusion}}</label>
+					</div>
+				</div>
+				<div class="switch">
+					<input id="Checkbox1" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" ng-model="forms.form2.exclusion1">
+					<label for="Checkbox1" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+			<!-- /row -->
+			<br />
+		</div>
+		<br />
+
+		<!-- check2 -->
+		<div class="clearfix" ng-if="forms.form2.exclusion1">
+
+			<div class="row">
+				<div class="question">
+					<div class="row">
+						<label>{{forms.form2.check2}}</label>
+					</div>
+				</div>
+				<div class="switch">
+					<input id="Checkbox2" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" ng-model="forms.form2.exclusion2">
+					<label for="Checkbox2" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+			<!-- /row -->
+
+			<br />
+			<div class="row" ng-if="forms.form2.exclusion2">
+
+				<label>{{forms.form2.check2}}</label>
+			</div>
+		</div>
+		<br />
+
+		<!-- partial -->
+		<div class="clearfix">
+
+			<div class="row">
+				<div class="question">
+					<div class="row">
+						<label>{{forms.form2.partial}}</label>
+					</div>
+				</div>
+				<div class="switch">
+					<input id="Checkbox4" class="cmn-toggle cmn-toggle-yes-no" type="checkbox" ng-model="forms.form2.partial1">
+					<label for="Checkbox4" data-on="Yes" data-off="No"></label>
+				</div>
+			</div>
+
+			<div ng-if="forms.form2.partial1">
+				<div class="row">
+					<label>{{forms.form2.percentage}}</label>
+				</div>
+
+				<div class="row">
+					<input type="text" ng-model="forms.form2.percentage1">
+				</div>
+			</div>
+		</div>
+		<br />
+
+	</form>
+
+	<!-- Step 5 certificateMsg-->
+	<form class="formText removeMargin" ng-if="step.count === 5">
+
+		<div class="clearfix">
+			<strong>
+				<h6>{{forms.certificateMsg}}</h6>
+			</strong>
+			<br />
+		</div>
+		<!-- Full Name -->
+		<div class="clearfix">
+			<div class="row">
+				<label>{{forms.form3.sign}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true"
+					ng-model="contact.sign">
+			</div>
+
+		</div>
+		<br />
+
+		<!--DATE 1-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date3"
+					name="signDate">
+			</div>
+		</div>
+		<br />
+
+		<!-- Full Name -->
+		<div class="clearfix">
+			<div class="row">
+				<label>{{forms.form3.sign}}</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="fullName"
+					required
+					aria-required="true"
+					ng-model="contact.sign">
+			</div>
+
+		</div>
+		<br />
+
+		<!--DATE 2-->
+		<div class="clearfix">
+			<div class="row">
+				<label for="FromDate">Date </label>
+			</div>
+			<div class="row">
+				<input
+					type="date"
+					id="Date4"
+					name="signDate2">
+			</div>
+		</div>
+		<br />
+
+		<!-- Address  -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Address Line 2:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="Address2">
+			</div>
+
+		</div>
+		<br />
+
+		<!--phone-->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Phone</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="60"
+					name="phone">
+			</div>
+
+		</div>
+		<br />
+		<!-- City -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>City:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="City"
+					ng-model="contact.City">
+			</div>
+
+		</div>
+		<br />
+		<!-- State -->
+		<div class="clearfix">
+			<div class="row">
+				<label>State:</label>
+			</div>
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.State">
+			</div>
+		</div>
+		<br />
+		<!-- Country -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Country:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.Country">
+			</div>
+
+		</div>
+		<br />
+		<!-- ZipCode -->
+		<div class="clearfix">
+
+			<div class="row">
+				<label>Zip Code:</label>
+			</div>
+
+			<div class="row">
+				<input
+					type="text"
+					class="form-control required"
+					maxlength="40"
+					name="State"
+					ng-model="contact.zipCode">
+			</div>
+
+		</div>
+		<br />
+	</form>
+
+	<!-- Step 6 B. ADDITIONAL TRANSFEROR(S)/SELLER(S) (continued)-->
+	<form class="formText removeMargin" ng-if="step.count === 6">
+		 
+		<input type="button" class="btn btn-primary" value="Add Value" id="addRow" ng-click="clickme()" />
+		<br/>
+		<table id="example" class="display" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>NAME</th>
+					<th>SSN</th>
+					<th>SIGNATURE</th>
+					<th>RELATIONSHIP</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>NAME</th>
+					<th>SSN </th>
+					<th>SIGNATURE</th>
+					<th>RELATIONSHIP</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</form>
+
+	<!-- Step 7 C. ADDITIONAL TRANSFEREE(S)/BUYER(S) (continued)-->
+	<form class="formText removeMargin" ng-if="step.count === 7">
+
+		<input type="button" class="btn btn-primary"  value="Add Value" id="Button9" ng-click="clickme()" />
+		<br/>
+		<table id="Table1" class="display" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>NAME</th>
+					<th>SSN</th>
+					<th>SIGNATURE</th>
+					<th>RELATIONSHIP</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>NAME</th>
+					<th>SSN </th>
+					<th>SIGNATURE</th>
+					<th>RELATIONSHIP</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+				</tr>
+			</tbody>
+		</table>
+
+	</form>
+
+	<!--Step 8 important Message-->
+	<form class="formText removeMargin" ng-if="step.count === 8">
+		<div class="row">
+			<strong>{{forms.importantNote.message}}</strong>
+		</div>
+
+		<div class="row">
+			<strong>
+				<label class="col-sm-12 text">{{forms.importantNote.message}}</label>
+			</strong>
+		</div>
+		<br />
+
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point1}}</label>
+		</div>
+		<br />
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point2}}</label>
+		</div>
+		<br />
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point3}}</label>
+		</div>
+		<br />
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point4}}</label>
+		</div>
+		<br />
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point4a}}</label>
+		</div>
+		<br />
+		<div class="row">
+			<label class="col-sm-12 text">{{forms.importantNote.point4b}}</label>
+		</div>
+	</form>
+	<br />
+
+	<!--Need to put this into a directive.-->
+	<div class="row nextButton">
+		<div class="btn-group btn-group-md col-sm-12" role="group">
+			<button class="btn btn-primary" ng-if="step.count > 1 && step.count < 9" id="Button4" ng-click="back()">< Back</button>
+			<button class="btn btn-primary" ng-if="step.count < 8 && step.count < 9" id="Button2" ng-click="next()">Next</button>
+			<button class="btn btn-primary" ng-if="step.count === 8 && step.count < 9" id="Button1" ng-click="submitForm()">Submit Form</button>
+			<button class="btn btn-default" ng-if="step.count < 9" id="Button3" ng-click="cancel()">Cancel</button>
+			<button class="btn btn-default" ng-if="step.count === 9" id="Button10" ng-click="startNew()">Start New Application</button>
+		</div>
+	</div>
+	<br />
+	<footer><strong>THIS DOCUMENT IS NOT SUBJECT TO PUBLIC INSPECTION</strong></footer>
+</div>

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+ 
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CAA e-Forms Service Center</title>
+     <!-- Css Scripts -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+	<link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="modules/main/main.css" rel="stylesheet" />
+    <link href="modules/menu/menu.css" rel="stylesheet" />
+    <link href="app/app.css" rel="stylesheet" />
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
+	<link href="css/font-awesome/font-awesome.css" rel="stylesheet">
+	<link href="css/base.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+	<link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+	<!-- External Scripts -->
+    <script src="Scripts/jquery-1.12.0.min.js"></script>
+	<script src="Scripts/jquery-2.0.3.min.js"></script> 
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-animate/angular-animate.min.js"></script>
+	<script src="Scripts/angular-message-format.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+   
+   
+      <!-- Custom Scripts -->
+    <script src="modules/menu/menu.js"></script>
+    <script src="modules/dashboard/dashboard.js"></script>
+    <script src="modules/main/main.js"></script>
+    <script src="modules/main/mainController.js"></script>
+    <script src="modules/main/mainDirective.js"></script>
+    <script src="modules/menu/menu.js"></script>
+    <script src="modules/menu/menuController.js"></script>
+    <script src="modules/menu/menuDirective.js"></script>
+    <script src="app/appConfig.js"></script>
+    <script src="app/app.js"></script>
+	 
+</head>
+
+<!-- app body -->
+<body class="container-fluid">
+
+    <!-- passing in the header values-->
+    <main-directive 
+        title="CLAIM FOR REASSESSMENT EXCLUSION FOR TRANSFER BETWEEN PARENT AND CHILD" 
+        subtitle="EF-58-AH-R16-0514-03000041-1 BOE-58-AH (P1) REV. 16 (05-14)" 
+        image="image/angular.png">
+    </main-directive>
+    <div class="ux-menu-area">
+        <menu-directive label="Home" icon="fa-dashboard" route="home"></menu-directive>
+        <menu-directive label="Form" icon="fa-plus-square" route="form"></menu-directive>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿.main-logo-bar {
+    color:              #000;
+    margin:             0px;
+}
+
+.main-title-bar {
+    background-color:   white;
+    padding:            0px 15px;
+    border-bottom:      2px solid black;
+}
+
+.main-title-area {
+    display:            inline-block;
+    text-align:         left;
+}
+
+.main-right-control {
+    line-height:        60px;
+    margin:             8px;
+    text-align:         center;
+    padding:            4px;        
+}
+
+.main-right-control > div {
+    text-align:         right;
+}
+
+.main-logo-title {
+    color:              #000;
+    margin-top:         6px;
+    font-size:          22px;
+}
+
+.main-logo-subtitle {
+    color:              black;
+    margin-top:         -10px;
+    font-size:          14px;
+}
+
+.main-icon {
+    display:            inline-block;
+    width:              50px;
+    height:             50px;
+    margin:             7px;
+    vertical-align:     top;
+    border:             1px solid #000  ;
+}
+
+@media screen and (min-width:768px) {
+    .main-right-control > div {
+        text-align:     right;
+    }
+
+    .main-title-area {
+        text-align:     left;
+    }
+
+  
+}
+
+.nextButton {
+    text-align: center;
+    float: left;
+}
+
+.ngview {
+    position:           absolute;
+    margin-top:         20px;
+    margin-left:        220px;  
+    color:              HighlightText;
+    text-align:         left;
+}
+
+.formText {
+    font-family:        'Times New Roman';
+    color:              black;
+    padding:            5px;
+    font-size:          16px;
+    margin:             initial;
+    margin-top:         50px;
+    word-wrap:          break-word;
+    width:              400px;
+}
+
+.textArea {
+    width:              100%;
+    padding:            0px;
+    height:             100px;
+ 
+}
+
+.removeMargin {
+    margin-right:      0px;
+    margin-left:       20px;  
+    padding-right:     5px;
+}
+
+@media screen and (max-width:400px) {
+    .ngview {
+        margin-left:    40px;
+        margin-top:     20px;
+         
+    }
+}
